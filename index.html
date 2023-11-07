@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Cálculo de Total de Produtos</title>
+</head>
+<body>
+    <div id="divpai"></div>
+
+    <script>
+        const produtos = [
+            { nome: "Camisa", preco: 50.55 },
+            { nome: "Calça", preco: 80.0 },
+            { nome: "Jaqueta", preco: 150.0 },
+            { nome: "Meia", preco: 100.0 }
+        ];
+
+        const Divpai = document.getElementById('divpai');
+
+        function calcularTotal(produtos) {
+            let total = 0;
+            produtos.forEach(product => {
+                total += product.preco;
+            });
+            return total;
+        }
+
+        const total = calcularTotal(produtos);
+        const elementoTotal = document.createElement('p');
+        elementoTotal.textContent = `Preço total: R$${total.toFixed(2)}`;
+        Divpai.appendChild(elementoTotal);
+    </script>
+</body>
+</html>
